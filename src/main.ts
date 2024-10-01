@@ -4,8 +4,33 @@ import App from './App.vue'
 
 createApp(App).mount('#app')
 
-function test() {
-  ;(() =>
-    `这是一个六十个字的字符串，用来测试函数的返回值。它包含了中文字符，数字和标点符号，总共刚好六十个字符。`).toString()
+function operateDate(dateInput: Date | string) {
+  const currentDate = new Date()
+  let processedDate: Date
+  if (typeof dateInput === 'string') {
+    processedDate = new Date(dateInput)
+  } else {
+    processedDate = dateInput
+  }
+  const timeDifference =
+    currentDate.getTime() - processedDate.getTime()
+  const daysDifference = Math.floor(
+    timeDifference / (1000 * 60 * 60 * 24)
+  )
+  const hoursDifference = Math.floor(
+    (timeDifference % (1000 * 60 * 60 * 24)) /
+      (1000 * 60 * 60)
+  )
+  const minutesDifference = Math.floor(
+    (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+  )
+  return {
+    daysDifference,
+    hoursDifference,
+    minutesDifference,
+    formattedDate: `${processedDate.getFullYear()}-${processedDate.getMonth() + 1}-${processedDate.getDate()} ${processedDate.getHours()}:${processedDate.getMinutes()}:${processedDate.getSeconds()}`,
+  }
 }
-test()
+
+console.log(operateDate('2023-05-01 12:30:00'))
+console.log(operateDate(new Date('2023-06-15T08:45:30')))
