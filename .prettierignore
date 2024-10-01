@@ -1,0 +1,56 @@
+# 忽略所有 node_modules 目录
+node_modules
+
+# 忽略所有构建输出目录
+dist
+build
+out
+
+# 忽略所有日志文件
+*.log
+
+# 忽略所有临时文件
+*.tmp
+*.temp
+
+# 忽略所有备份文件
+*.bak
+
+# 忽略所有 IDE 和编辑器配置文件
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# 忽略所有版本控制相关文件
+.git
+.svn
+
+# 忽略所有压缩文件
+*.zip
+*.rar
+*.7z
+
+# 忽略所有图片文件
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+
+# 忽略所有字体文件
+*.ttf
+*.woff
+*.woff2
+*.eot
+
+# 忽略所有配置文件
+*.config.js
+*.conf.js
+
+# 忽略所有 markdown 文件
+*.md
+
+# 忽略特定的文件
+package-lock.json
+yarn.lock
