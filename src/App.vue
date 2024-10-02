@@ -12,7 +12,6 @@
         <span>{{ $t('toggleLocale') }}</span>
         <font-awesome-icon :icon="['fas', 'angle-right']" size="xs" />
       </Button>
-
     </div>
   </div>
 </template>

@@ -3,7 +3,9 @@ import { usePrimeVue } from 'primevue/config'
 import { createI18n } from 'vue-i18n'
 
 // 动态导入所有语言包 JSON 文件
-const localeFiles = import.meta.glob('./i18n-library/!(*presets).json', { eager: true })
+const localeFiles = import.meta.glob('./i18n-library/!(*presets).json', {
+  eager: true,
+})
 const presets = await import('./i18n-library/presets.json')
 
 // 遍历本地语言包，输出到messages
@@ -13,7 +15,7 @@ const messages = Object.entries(localeFiles).reduce(
 
     messages[locale] = {
       ...module,
-      ...presets.default[locale]
+      ...presets.default[locale],
     }
     return messages
   },
@@ -59,7 +61,7 @@ export function useLanguage() {
     currentLocale,
     changeLocale,
     t: i18n.global.t,
-    availableLocales
+    availableLocales,
   }
 }
 
