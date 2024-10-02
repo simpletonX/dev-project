@@ -1,0 +1,14 @@
+{
+  "en": {
+    "toggleLocale": "Switch Language"
+  },
+  "ru": {
+    "toggleLocale": "Переключить язык"
+  },
+  "de": {
+    "toggleLocale": "Sprache wechseln"
+  },
+  "zh-TW": {
+    "toggleLocale": "切換語言"
+  }
+}
