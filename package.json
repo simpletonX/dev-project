@@ -10,7 +10,7 @@
     "prepare": "husky",
     "format:scss": "stylelint \"**/*.scss\" --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,scss,css,md,json}\"",
-    "commit": "commitlint --config commitlint.config.js"
+    "commit": "commitlint --config commitlint.config.js -e -V"
   },
   "dependencies": {
     "vue": "^3.4.37"
