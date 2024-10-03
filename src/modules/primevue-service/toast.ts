@@ -1,6 +1,6 @@
 /* eslint-disable */
 // @ts-nocheck
-import app from '@/app'
+import app from '@/main'
 
 export default <T>(params: T) => {
   app.config.globalProperties.$toast.add({

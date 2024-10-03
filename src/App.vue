@@ -19,8 +19,8 @@
 <script setup lang="ts">
 /* eslint-disable */
 // @ts-nocheck
-import { useLanguage } from './plugins/i18n'
-import instance from './utils/request'
+import { useLanguage } from './modules/i18n'
+import instance from './service/request'
 const { currentLocale, availableLocales } = useLanguage()
 
 const handleClick = () => {

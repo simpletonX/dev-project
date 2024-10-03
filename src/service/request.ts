@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
-import toast from '../plugins/primevue/toast'
-import app from '../app'
+import toast from '../modules/primevue-service/toast'
+import app from '../main'
 
 const instance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,

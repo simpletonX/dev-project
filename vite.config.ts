@@ -4,8 +4,8 @@ import Components from 'unplugin-vue-components/vite'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 import { viteMockServe } from 'vite-plugin-mock'
 import { UserConfigExport, ConfigEnv } from 'vite'
-
 import path from 'path'
+
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
@@ -26,7 +26,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     base: './',
     resolve: {
       alias: {
-        '@': path.resolve('./src'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     css: {
