@@ -6,13 +6,13 @@
         :options="availableLocales"
         class="w-full md:w-56 mr-3"
       />
-      <Button severity="info">
-        <!-- <font-awesome-icon :icon="['fas', 'font-awesome']" size="lg" /> -->
+      <Button severity="info" @click="handleClick">
         <font-awesome-icon :icon="['fas', 'earth-americas']" />
         <span>{{ $t('toggleLocale') }}</span>
         <font-awesome-icon :icon="['fas', 'angle-right']" size="xs" />
       </Button>
     </div>
+    <Toast />
   </div>
 </template>
 
@@ -20,7 +20,19 @@
 /* eslint-disable */
 // @ts-nocheck
 import { useLanguage } from './plugins/i18n'
+import instance from './utils/request'
 const { currentLocale, availableLocales } = useLanguage()
+
+const handleClick = () => {
+  instance({
+    url: '/api/user/login',
+    method: 'post',
+    data: {
+      username: 'admin',
+      password: 'admin',
+    },
+  })
+}
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>

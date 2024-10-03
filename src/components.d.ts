@@ -13,9 +13,11 @@ declare module 'vue' {
     DatePicker: typeof import('primevue/datepicker')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Listbox: typeof import('primevue/listbox')['default']
+    Message: typeof import('primevue/message')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Select: typeof import('primevue/select')['default']
     SelectButton: typeof import('primevue/selectbutton')['default']
+    Toast: typeof import('primevue/toast')['default']
   }
 }

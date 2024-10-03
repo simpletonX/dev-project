@@ -1,14 +1,18 @@
 {
   "en": {
-    "toggleLocale": "Switch Language"
+    "toggleLocale": "Switch Language",
+    "backendResponse": "Backend response"
   },
   "ru": {
-    "toggleLocale": "Переключить язык"
+    "toggleLocale": "Переключить язык",
+    "backendResponse": "Ответ бэкенда"
   },
   "de": {
-    "toggleLocale": "Sprache wechseln"
+    "toggleLocale": "Sprache wechseln",
+    "backendResponse": "Backend-Antwort"
   },
   "zh-TW": {
-    "toggleLocale": "切換語言"
+    "toggleLocale": "切換語言",
+    "backendResponse": "後端響應"
   }
 }

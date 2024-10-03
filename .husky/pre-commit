@@ -1,4 +1,16 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# 运行格式化
 pnpm run format
+
+# 检查是否有更改
+if git diff --exit-code; then
+  # 如果没有更改,直接退出
+  exit 0
+else
+  # 如果有更改,将更改添加到暂存区
+  git add -A
+  echo "代码已格式化并重新暂存。请重新提交。"
+  exit 1
+fi

@@ -55,8 +55,12 @@ export function useLanguage() {
   })
 
   // 初始化语言
-  const initLocale = localStorage.getItem('currentLocale') || navigator.language.split('-')[0]
-  changeLocale(initLocale)
+  const initLocale = localStorage.getItem('currentLocale') || navigator.language
+  if (Object.keys(messages).includes(initLocale)) {
+    changeLocale(initLocale)
+  } else {
+    changeLocale('ru')
+  }
 
   return {
     currentLocale,
