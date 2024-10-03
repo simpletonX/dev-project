@@ -9,17 +9,19 @@ const localeFiles = import.meta.glob('./i18n-library/!(*presets).json', {
 const presets = await import('./i18n-library/presets.json')
 
 // 遍历本地语言包，输出到messages
-const messages = Object.entries(localeFiles).reduce(
+const messages: Record<string, Record<string, string>> = Object.entries(localeFiles).reduce(
   (messages, [path, module]) => {
-    const locale = path.match(/\.\/i18n-library\/(.+)\.json/)[1]
-
-    messages[locale] = {
-      ...module,
-      ...presets.default[locale],
+    const match = path.match(/\.\/i18n-library\/(.+)\.json/)
+    if (match) {
+      const locale = match[1]
+      messages[locale] = {
+        ...(module as Record<string, string>),
+        ...(presets.default[locale as keyof typeof presets.default] || {}),
+      }
     }
     return messages
   },
-  {}
+  {} as Record<string, Record<string, string>>
 )
 
 const i18n = createI18n({
@@ -34,7 +36,7 @@ export function useLanguage() {
   const currentLocale = ref(i18n.global.locale.value)
   const availableLocales = ref(Object.keys(presets.default))
 
-  const changeLocale = async (locale) => {
+  const changeLocale = async (locale: string) => {
     // 更新 Vue I18n 的语言
     i18n.global.locale.value = locale
 
@@ -53,8 +55,7 @@ export function useLanguage() {
   })
 
   // 初始化语言
-  const initLocale =
-    localStorage.getItem('currentLocale') || navigator.language.split('-')[0]
+  const initLocale = localStorage.getItem('currentLocale') || navigator.language.split('-')[0]
   changeLocale(initLocale)
 
   return {
