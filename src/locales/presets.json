@@ -1,18 +1,82 @@
 {
-  "en": {
+  "us": {
     "toggleLocale": "Switch Language",
-    "backendResponse": "Backend response"
+    "backendResponse": "Backend response",
+    "loginPage": {
+      "title": "Login Management Platform",
+      "description": "Welcome to the Alligator Selection Management Platform. Please proceed with related operations after logging in.",
+      "username": "Username",
+      "usernamePlaceholder": "Enter your username",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "login": "Login Now",
+      "loginSuccess": "Login Success",
+      "formValidate": {
+        "usernameRequired": "Username is required",
+        "usernameMinAndMax": "Username must be at least 6 characters and at most 10 characters",
+        "passwordRequired": "Password is required",
+        "passwordMinAndMax": "Password must be at least 6 characters and at most 15 characters"
+      }
+    }
   },
   "ru": {
     "toggleLocale": "Переключить язык",
-    "backendResponse": "Ответ бэкенда"
+    "backendResponse": "Ответ бэкенда",
+    "loginPage": {
+      "title": "Платформа управления входом",
+      "description": "Добро пожаловать на платформу управления выбором Alligator. Пожалуйста, выполните соответствующие операции после входа в систему.",
+      "username": "Имя пользователя",
+      "usernamePlaceholder": "Введите ваше имя пользователя",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введите ваш пароль",
+      "login": "Войти",
+      "loginSuccess": "Вход выполнен успешно",
+      "formValidate": {
+        "usernameRequired": "Имя пользователя обязательно",
+        "usernameMinAndMax": "Имя пользователя должно быть от 6 до 10 символов",
+        "passwordRequired": "Пароль обязателен",
+        "passwordMinAndMax": "Пароль должен быть от 6 до 15 символов"
+      }
+    }
   },
   "de": {
     "toggleLocale": "Sprache wechseln",
-    "backendResponse": "Backend-Antwort"
+    "backendResponse": "Backend-Antwort",
+    "loginPage": {
+      "title": "Login-Management-Plattform",
+      "description": "Willkommen auf der Alligator-Auswahlverwaltungsplattform. Bitte führen Sie nach dem Einloggen die entsprechenden Vorgänge durch.",
+      "username": "Benutzername",
+      "usernamePlaceholder": "Geben Sie Ihren Benutzernamen ein",
+      "password": "Passwort",
+      "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+      "login": "Einloggen",
+      "loginSuccess": "Einloggen erfolgt erfolgreich",
+      "formValidate": {
+        "usernameRequired": "Benutzername ist erforderlich",
+        "usernameMinAndMax": "Benutzername muss mindestens 6 und höchstens 10 Zeichen lang sein",
+        "passwordRequired": "Passwort ist erforderlich",
+        "passwordMinAndMax": "Passwort muss mindestens 6 und höchstens 15 Zeichen lang sein"
+      }
+    }
   },
-  "zh-TW": {
-    "toggleLocale": "切換語言",
-    "backendResponse": "後端響應"
+  "cn": {
+    "toggleLocale": "切换语言",
+    "backendResponse": "后端响应",
+    "loginPage": {
+      "title": "登录管理平台",
+      "description": "欢迎来到鳄鱼选择管理平台。请在登录后进行相关操作。",
+      "username": "用户名",
+      "usernamePlaceholder": "请输入您的用户名",
+      "password": "密码",
+      "passwordPlaceholder": "请输入您的密码",
+      "login": "登录",
+      "loginSuccess": "登录成功",
+      "formValidate": {
+        "usernameRequired": "用户名是必填项",
+        "usernameMinAndMax": "用户名必须至少为6个字符，最多为10个字符",
+        "passwordRequired": "密码是必填项",
+        "passwordMinAndMax": "密码必须至少为6个字符，最多为15个字符"
+      }
+    }
   }
 }

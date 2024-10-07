@@ -50,7 +50,7 @@ export default [
       if (!user) {
         return {
           code: 401,
-          message: '用户不存在',
+          data: 'User does not exist',
         }
       }
 
@@ -77,7 +77,10 @@ export default [
       }
       return {
         code: 200,
-        message: 'login success',
+        data: {
+          token: user.token,
+          message: 'Login successfully',
+        },
       }
     },
   },

@@ -8,3 +8,15 @@
   vertical-align: middle;
   box-sizing: border-box;
 }
+
+:root {
+  --panel-bg-surface: var(--p-surface-0);
+}
+
+:root[class='dark'] {
+  --panel-bg-surface: var(--p-surface-900);
+}
+
+.surface-panel {
+  background-color: var(--panel-bg-surface);
+}

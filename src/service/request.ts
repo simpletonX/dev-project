@@ -1,9 +1,9 @@
-import axios, { AxiosInstance } from 'axios'
-import toast from '../modules/primevue-service/toast'
-import app from '../main'
+import axios from 'axios'
+import toast from '@/modules/primevue-service/toast'
+import app from '@/main'
 
-const instance: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+const instance = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 5000,
 })
 
@@ -18,7 +18,7 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (response) => {
-    let severity
+    let severity: string = ''
 
     switch (response.data.code) {
       case 401:
