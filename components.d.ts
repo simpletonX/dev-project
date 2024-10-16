@@ -7,11 +7,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AsideNavbar: typeof import('./src/components/AsideNavbar.vue')['default']
+    Breadcrumb: typeof import('primevue/breadcrumb')['default']
+    BreadcrumbTopbar: typeof import('./src/components/BreadcrumbTopbar.vue')['default']
     Button: typeof import('primevue/button')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     InputText: typeof import('primevue/inputtext')['default']
+    Logo: typeof import('./src/components/Logo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollPanel: typeof import('primevue/scrollpanel')['default']
     Select: typeof import('primevue/select')['default']
     SelectButton: typeof import('primevue/selectbutton')['default']
     Toast: typeof import('primevue/toast')['default']

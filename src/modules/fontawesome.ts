@@ -5,15 +5,37 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* import specific icons */
 import {
-  // faUserSecret,
-  // faFontAwesome,
-  // faEarthAmericas,
-  // faAngleRight,
   faUserTie,
+  faAngleDown,
+  faCompass,
+  faSquare,
+  faKey,
+  faScrewdriverWrench,
+  faHatCowboy,
+  faUserLarge,
+  faHouseUser,
+  faSquareH,
+  faSquareParking,
+  faGear,
 } from '@fortawesome/free-solid-svg-icons'
+import { faSquareWebAwesome, faAmazon } from '@fortawesome/free-brands-svg-icons'
 /* add icons to the library */
-// library.add(faUserSecret, faFontAwesome, faEarthAmericas, faAngleRight, faUserTie)
-library.add(faUserTie)
+library.add(
+  faUserTie,
+  faAngleDown,
+  faCompass,
+  faSquare,
+  faSquareWebAwesome,
+  faKey,
+  faScrewdriverWrench,
+  faHatCowboy,
+  faUserLarge,
+  faHouseUser,
+  faSquareH,
+  faSquareParking,
+  faGear,
+  faAmazon
+)
 
 export default {
   install(app: App) {

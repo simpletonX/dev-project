@@ -15,6 +15,8 @@ app.use(fontawesome)
 import PrimeVue from 'primevue/config'
 import PrimeVuePreset from './modules/primevue-preset'
 app.use(PrimeVue, PrimeVuePreset)
+// primeicons-图标库
+import 'primeicons/primeicons.css'
 
 // PrimeVue-Service [toast] 弹出框组件Service
 import ToastService from 'primevue/toastservice'

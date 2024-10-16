@@ -9,6 +9,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--p-surface-0);
+}
+
+.dark {
+  body {
+    background-color: var(--p-surface-900) !important;
+  }
+}
+
 :root {
   --panel-bg-surface: var(--p-surface-0);
 }

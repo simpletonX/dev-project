@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-container flex justify-center items-center">
       <div
-        class="bg-surface-0 dark:bg-surface-900 w-[500px] shadow px-10 pt-14 pb-10 rounded-lg"
+        class="bg-surface-0 dark:bg-surface-900 w-[500px] shadow px-10 pt-12 pb-6 rounded-lg"
       >
         <header>
           <div class="text-xl font-bold mb-2">{{ $t('loginPage.title') }}</div>
@@ -45,30 +45,10 @@
           </form>
         </main>
 
-        <footer class="mt-6 flex justify-center items-center">
-          <SelectButton
-            v-model="currentTheme"
-            :options="themeOptions"
-            option-label="label"
-            option-value="value"
-            @change="toggleTheme"
-          />
-          <Select
-            v-model="currentLocale"
-            :options="availableLocales"
-            option-label="label"
-            option-value="code"
-            class="ml-2"
-          >
-            <template #option="{ option }">
-              <span class="fi mr-3 text-base" :class="`fi-${option.code}`"></span>
-              <div class="text-base">{{ option.label }}</div>
-            </template>
-            <template #value="{ value }">
-              <span class="fi mr-3" :class="`fi-${value}`"></span>
-              <span>{{ currentLocaleLabel }}</span>
-            </template>
-          </Select>
+        <footer class="mt-6">
+          <div class="flex justify-center mt-10">
+            <Logo showTitle size="xl" />
+          </div>
         </footer>
       </div>
     </div>
@@ -80,9 +60,8 @@ import * as yup from 'yup'
 import { useForm } from 'vee-validate'
 import { useUserStore } from '@/stores/modules/user'
 import { useLanguage } from '@/modules/i18n'
-import { useTheme } from '@/modules/theme'
 import type { LoginBody } from '@/service/user/types'
-const { currentLocale, availableLocales, t } = useLanguage()
+const { t } = useLanguage()
 
 // 表单校验逻辑 -> vee-validate
 // username: 用户名[字符串, 必填, 最小长度6]
@@ -127,22 +106,6 @@ const onSubmit = handleSubmit((values) => {
     loading.value = false
   }, 400)
 })
-
-// 国际化切换逻辑
-// currentLocale -> 当前语言 ref('us'|'ru'|'zh'|'de')
-// availableLocales -> 可选语言列表 Array<{ code: string; label: string }>
-// currentLocaleLabel -> 当前语言描述 string 'English'|'Русский'|'中文简体'|'Deutsch'
-const currentLocaleLabel = computed(() => {
-  return availableLocales.find(
-    (locale: { code: string; label: string }) => locale.code === currentLocale.value
-  )?.label
-})
-
-// 浅/暗主题切换逻辑
-// toggleTheme 切换主题 true:表示暗主题，为html添加dark类
-// themeOptions 主题列表 [{ label: 'Light', value: false }, { label: 'Dark', value: true }]
-// currentTheme 当前主题 ref(false|true) true:表示暗主题
-const { toggleTheme, themeOptions, currentTheme } = useTheme()
 </script>
 
 <style scoped lang="scss">

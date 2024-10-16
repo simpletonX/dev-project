@@ -17,6 +17,22 @@
         "passwordRequired": "Password is required",
         "passwordMinAndMax": "Password must be at least 6 characters and at most 15 characters"
       }
+    },
+    "routerLabels": {
+      "home": "Home Management",
+      "acl": {
+        "$label$": "Access Control Management",
+        "permission": "Permission Management",
+        "role": "Role Management",
+        "user": "User Management"
+      },
+      "product": {
+        "$label$": "Product Management",
+        "stock-keeping": "Stock Keeping Unit Management (SKU)",
+        "standard-product": "Standard Product Unit Management (SPU)",
+        "attribute": "Attribute Management",
+        "brand": "Brand Management"
+      }
     }
   },
   "ru": {
@@ -36,6 +52,22 @@
         "usernameMinAndMax": "Имя пользователя должно быть от 6 до 10 символов",
         "passwordRequired": "Пароль обязателен",
         "passwordMinAndMax": "Пароль должен быть от 6 до 15 символов"
+      }
+    },
+    "routerLabels": {
+      "home": "Главная",
+      "acl": {
+        "$label$": "Контроль доступа",
+        "permission": "Разрешения",
+        "role": "Роли",
+        "user": "Пользователи"
+      },
+      "product": {
+        "$label$": "Продукты",
+        "stock-keeping": "Управление запасами (SKU)",
+        "standard-product": "Стандартные продукты (SPU)",
+        "attribute": "Атрибуты",
+        "brand": "Бренды"
       }
     }
   },
@@ -57,6 +89,22 @@
         "passwordRequired": "Passwort ist erforderlich",
         "passwordMinAndMax": "Passwort muss mindestens 6 und höchstens 15 Zeichen lang sein"
       }
+    },
+    "routerLabels": {
+      "home": "Startseite",
+      "acl": {
+        "$label$": "Zugriffskontrolle",
+        "permission": "Berechtigung",
+        "role": "Rolle",
+        "user": "Benutzer"
+      },
+      "product": {
+        "$label$": "Produkt",
+        "stock-keeping": "Bestandsführung",
+        "standard-product": "Standardprodukt",
+        "attribute": "Attribut",
+        "brand": "Marke"
+      }
     }
   },
   "cn": {
@@ -76,6 +124,22 @@
         "usernameMinAndMax": "用户名必须至少为6个字符，最多为10个字符",
         "passwordRequired": "密码是必填项",
         "passwordMinAndMax": "密码必须至少为6个字符，最多为15个字符"
+      }
+    },
+    "routerLabels": {
+      "home": "首页管理",
+      "acl": {
+        "$label$": "访问控制管理",
+        "permission": "权限管理",
+        "role": "角色管理",
+        "user": "用户管理"
+      },
+      "product": {
+        "$label$": "产品管理",
+        "stock-keeping": "可售库存管理（sku）",
+        "standard-product": "产品标准管理（spu）",
+        "attribute": "属性管理",
+        "brand": "品牌管理"
       }
     }
   }

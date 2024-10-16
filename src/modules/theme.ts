@@ -1,3 +1,4 @@
+import { setLocalStorage, getLocalStorage } from '@/modules/localStorge'
 import { SelectButtonChangeEvent } from 'primevue/selectbutton'
 
 export function useTheme() {
@@ -6,10 +7,12 @@ export function useTheme() {
   const themeOptions = [
     {
       label: 'Light',
+      key: false,
       value: false,
     },
     {
       label: 'Dark',
+      key: true,
       value: true,
     },
   ]
@@ -17,16 +20,25 @@ export function useTheme() {
   // 切换当前主题
   function toggleTheme(isDark: SelectButtonChangeEvent) {
     currentTheme.value = isDark.value
-    if (isDark.value) {
+    if (currentTheme.value) {
       document.documentElement.classList.add('dark')
+      setLocalStorage('theme', 'dark')
     } else {
       document.documentElement.classList.remove('dark')
+      setLocalStorage('theme', 'light')
     }
   }
 
   // 初始化主题（跟随系统/监听系统主题变化）
   function initTheme() {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const localTheme = getLocalStorage('theme')
+    const isDark =
+      localTheme === null
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+        : localTheme === 'dark'
+          ? true
+          : false
+
     if (isDark) {
       currentTheme.value = true
       document.documentElement.classList.add('dark')

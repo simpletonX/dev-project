@@ -5,7 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
 import { viteMockServe } from 'vite-plugin-mock'
 import { UserConfigExport, ConfigEnv } from 'vite'
-import VueRouter from 'unplugin-vue-router/vite'
+// import VueRouter from 'unplugin-vue-router/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
@@ -13,7 +13,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
     plugins: [
       // 动态路由-自动生成路由 (必须在vue()之前调用)
-      VueRouter({}),
+      // VueRouter({}),
       // 自动导入模块
       AutoImport({
         imports: ['vue', 'vue-router'],
