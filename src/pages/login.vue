@@ -2,7 +2,7 @@
   <div class="login">
     <div class="login-container flex justify-center items-center">
       <div
-        class="bg-surface-0 dark:bg-surface-900 w-[500px] shadow px-10 pt-12 pb-6 rounded-lg"
+        class="bg-surface-0 dark:bg-surface-900 w-[460px] shadow px-10 pt-12 pb-6 rounded-lg"
       >
         <header>
           <div class="text-xl font-bold mb-2">{{ $t('loginPage.title') }}</div>
@@ -59,8 +59,8 @@
 import * as yup from 'yup'
 import { useForm } from 'vee-validate'
 import { useUserStore } from '@/stores/modules/user'
-import { useLanguage } from '@/modules/i18n'
-import type { LoginBody } from '@/service/user/types'
+import { useLanguage } from '@/utils/i18n'
+import type { LoginBody } from '@/api/user/types'
 const { t } = useLanguage()
 
 // 表单校验逻辑 -> vee-validate
@@ -82,6 +82,11 @@ const schema = yup.object({
 
 const { defineField, handleSubmit, errors } = useForm({
   validationSchema: schema,
+  initialValues: {
+    // username: 'магистраль',
+    username: 'admin',
+    password: '111111',
+  },
 })
 
 const [username] = defineField('username')
@@ -101,7 +106,6 @@ const onSubmit = handleSubmit((values) => {
   clearTimeout(requestTimer.value)
   requestTimer.value = setTimeout(async () => {
     const res = await loginAction(values as LoginBody, t('loginPage.loginSuccess'))
-
     if (res?.code === 200) router.replace('/')
     loading.value = false
   }, 400)

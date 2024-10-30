@@ -3,17 +3,21 @@ import App from './App.vue'
 import './styles/index.scss'
 const app = createApp(App)
 
+// v-loading-指令 ======================================== =>
+import { loadingDirective } from '@/plugins/v-loading'
+app.directive('loading', loadingDirective)
+
 // i18n-国际化方案 ======================================== =>
-import i18n from './modules/i18n'
+import i18n from './utils/i18n'
 app.use(i18n)
 
 // fontawesome-svg图标库 ======================================== =>
-import fontawesome from './modules/fontawesome'
+import fontawesome from './utils/fontawesome'
 app.use(fontawesome)
 
 // PrimeVue-UI组件库方案 ======================================== =>
 import PrimeVue from 'primevue/config'
-import PrimeVuePreset from './modules/primevue-preset'
+import PrimeVuePreset from './utils/primevue-preset'
 app.use(PrimeVue, PrimeVuePreset)
 // primeicons-图标库
 import 'primeicons/primeicons.css'
@@ -32,6 +36,13 @@ app.use(router)
 // 应用-pinia ======================================== =>
 import pinia from './stores'
 app.use(pinia)
+
+// NProgress-进度条样式 ======================================== =>
+import 'nprogress/nprogress.css'
+
+// v-progress-指令 ======================================== =>
+import { progressDirective } from '@/plugins/v-progress'
+app.directive('progress', progressDirective)
 
 app.mount('#app')
 export default app

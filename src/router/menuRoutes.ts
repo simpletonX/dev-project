@@ -111,6 +111,26 @@ export default [
           },
         ],
       },
+      {
+        path: '/campus-events',
+        name: 'campus-events',
+        meta: {
+          contain: true,
+          preset: 'campus-events.$label$',
+          icon: ['fas', 'house-user'],
+        },
+        children: [
+          {
+            path: '/campus-events/runners-up',
+            component: () => import('@/layouts/campus-events/runners-up/index.vue'),
+            name: 'campus-events-runners-up',
+            meta: {
+              contain: true,
+              preset: 'campus-events.runners-up',
+            },
+          },
+        ],
+      },
     ],
   },
   {

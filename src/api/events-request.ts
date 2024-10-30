@@ -1,14 +1,19 @@
 import axios from 'axios'
-import toast from '@/modules/primevue-service/toast'
+import toast from '@/utils/primevue-service/toast'
 import app from '@/main'
+import { useUserStore } from '@/stores/modules/user'
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_EVENT_URL,
   timeout: 5000,
 })
 
 instance.interceptors.request.use(
   (config) => {
+    const { token } = useUserStore()
+    if (token) {
+      config.headers.token = token
+    }
     return config
   },
   (error) => {

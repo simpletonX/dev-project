@@ -7,9 +7,15 @@
   padding: 0;
   vertical-align: middle;
   box-sizing: border-box;
+  word-break: break-all;
+}
+
+html {
+  font-size: 13px;
 }
 
 body {
+  // min-width: 1290px;
   background-color: var(--p-surface-0);
 }
 
@@ -29,4 +35,29 @@ body {
 
 .surface-panel {
   background-color: var(--panel-bg-surface);
+}
+
+/* NProgress-进度条样式 ======================================== => */
+#nprogress {
+  .bar {
+    background: linear-gradient(to right, #dc3545, #339966, skyblue) !important;
+    height: 3px !important;
+  }
+}
+
+/* Toast-消息弹窗组件样式 ======================================== => */
+.p-toast {
+  right: 50% !important;
+  transform: translateX(50%) !important;
+}
+
+/* 遮罩层样式 ======================================== => */
+.p-overlay-mask {
+  // background-color: rgba(0, 0, 0, 0) !important;
+  // backdrop-filter: blur(20px) !important;
+  // border-radius: 12px !important;
+
+  .p-datatable-loading-icon path {
+    fill: var(--p-surface-500) !important;
+  }
 }

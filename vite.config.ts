@@ -3,20 +3,23 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { PrimeVueResolver } from '@primevue/auto-import-resolver'
-import { viteMockServe } from 'vite-plugin-mock'
-import { UserConfigExport, ConfigEnv } from 'vite'
+// import { viteMockServe } from 'vite-plugin-mock'
+import { UserConfigExport, ConfigEnv, loadEnv } from 'vite'
 // import VueRouter from 'unplugin-vue-router/vite'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default ({ command }: ConfigEnv): UserConfigExport => {
+// export default ({ command, mode }: ConfigEnv): UserConfigExport => {
+export default ({ mode }: ConfigEnv): UserConfigExport => {
+  const env = loadEnv(mode, process.cwd())
+
   return {
     plugins: [
       // 动态路由-自动生成路由 (必须在vue()之前调用)
       // VueRouter({}),
       // 自动导入模块
       AutoImport({
-        imports: ['vue', 'vue-router'],
+        imports: ['vue', 'vue-router', 'pinia'],
         // 生成 TypeScript 声明文件
         dts: 'src/auto-imports.d.ts',
         eslintrc: {
@@ -31,10 +34,10 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         resolvers: [PrimeVueResolver()],
       }),
       // vite-mockjs-模拟接口
-      viteMockServe({
-        mockPath: 'mock',
-        localEnabled: command === 'serve',
-      }),
+      // viteMockServe({
+      //   mockPath: 'mock',
+      //   localEnabled: command === 'serve',
+      // }),
     ],
     base: './',
     resolve: {
@@ -52,6 +55,13 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     },
     server: {
       port: 5173,
+      proxy: {
+        [env.VITE_API_BASE_URL]: {
+          target: env.VITE_API_BASE_URL_DEV,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+      },
     },
   }
 }

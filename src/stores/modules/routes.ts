@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import routes from '@/router/menuRoutes'
-import { useLanguage } from '@/modules/i18n'
+import { useLanguage } from '@/utils/i18n'
 
 export const useRouteStore = defineStore('routes', () => {
   const { t } = useLanguage()

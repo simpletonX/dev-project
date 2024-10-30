@@ -17,6 +17,7 @@ import {
   faSquareH,
   faSquareParking,
   faGear,
+  faArrowUpFromBracket,
 } from '@fortawesome/free-solid-svg-icons'
 import { faSquareWebAwesome, faAmazon } from '@fortawesome/free-brands-svg-icons'
 /* add icons to the library */
@@ -34,7 +35,8 @@ library.add(
   faSquareH,
   faSquareParking,
   faGear,
-  faAmazon
+  faAmazon,
+  faArrowUpFromBracket
 )
 
 export default {

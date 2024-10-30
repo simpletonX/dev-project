@@ -1,18 +1,19 @@
 <template>
   <div class="layout-frame flex justify-between items-center">
-    <div class="aside-bar h-full border-r border-surface-300 dark:border-surface-800">
-      <div
-        class="logo-area w-[calc(100%-30px)] h-[70px] ml-[15px] px-2 pt-6 border-b border-surface-200 dark:border-surface-800"
-      >
+    <div
+      class="aside-bar h-full border-r border-surface-200 dark:border-surface-800 dark:bg-surface-950"
+    >
+      <div class="logo-area w-[calc(100%-30px)] h-[60px] ml-[15px] px-2 pt-6">
         <Logo showTitle size="xl" />
       </div>
-      <AsideNavbar :routes="routes" class="h-[calc(100%-70px)]" />
+      <AsideNavbar :routes="routes" :showIcon="false" class="h-[calc(100%-60px)]" />
     </div>
+
     <div class="main-content">
-      <div class="main-header">
+      <div class="main-header dark:bg-surface-950">
         <BreadcrumbTopbar />
       </div>
-      <div class="main-container">
+      <div class="main-container p-6 bg-surface-50 dark:bg-surface-950 overflow-auto">
         <router-view v-slot="{ Component }">
           <transition name="fade">
             <component :is="Component" />
@@ -31,14 +32,13 @@ const routes = ref(menuRoutes)
 </script>
 
 <style scoped lang="scss">
-$aside-width: 320px;
+$aside-width: 296px;
 
 .layout-frame {
   height: 100vh;
 
   .aside-bar {
     width: $aside-width;
-    height: 100%;
   }
 
   .main-content {
@@ -47,6 +47,10 @@ $aside-width: 320px;
 
     .main-header {
       height: 70px;
+    }
+
+    .main-container {
+      height: calc(100% - 70px);
     }
   }
 }

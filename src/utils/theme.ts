@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage } from '@/modules/localStorge'
+import { setLocalStorage, getLocalStorage } from '@/utils/localStorge'
 import { SelectButtonChangeEvent } from 'primevue/selectbutton'
 
 export function useTheme() {

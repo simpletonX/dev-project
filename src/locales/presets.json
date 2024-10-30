@@ -1,22 +1,39 @@
 {
   "us": {
-    "toggleLocale": "Switch Language",
-    "backendResponse": "Backend response",
+    "toggleLocale": "Toggle Language",
+    "backendResponse": "Backend Response",
     "loginPage": {
-      "title": "Login Management Platform",
-      "description": "Welcome to the Alligator Selection Management Platform. Please proceed with related operations after logging in.",
+      "title": "Login to Management Platform",
+      "description": "Welcome to Little Atai Management Platform. Please login to proceed with operations.",
       "username": "Username",
-      "usernamePlaceholder": "Enter your username",
+      "usernamePlaceholder": "Please enter your username",
       "password": "Password",
-      "passwordPlaceholder": "Enter your password",
-      "login": "Login Now",
-      "loginSuccess": "Login Success",
+      "passwordPlaceholder": "Please enter your password",
+      "login": "Login",
+      "logout": "Logout",
+      "loginSuccess": "Login Successful",
       "formValidate": {
         "usernameRequired": "Username is required",
-        "usernameMinAndMax": "Username must be at least 6 characters and at most 10 characters",
+        "usernameMinAndMax": "Username must be between 6 and 10 characters",
         "passwordRequired": "Password is required",
-        "passwordMinAndMax": "Password must be at least 6 characters and at most 15 characters"
+        "passwordMinAndMax": "Password must be between 6 and 15 characters"
       }
+    },
+    "productPage": {
+      "brand": {
+        "addBrand": "Add Brand",
+        "dialogTitle": "Brand Management",
+        "listHeader": {
+          "logoUrl": "Brand Logo",
+          "logoUrlText": "Logo URL",
+          "updateTime": "Update Time"
+        }
+      }
+    },
+    "commons": {
+      "operate": "Other Operations",
+      "edit": "Edit",
+      "delete": "Delete"
     },
     "routerLabels": {
       "home": "Home Management",
@@ -28,24 +45,29 @@
       },
       "product": {
         "$label$": "Product Management",
-        "stock-keeping": "Stock Keeping Unit Management (SKU)",
-        "standard-product": "Standard Product Unit Management (SPU)",
+        "stock-keeping": "Stock Keeping Unit (SKU) Management",
+        "standard-product": "Standard Product Unit (SPU) Management",
         "attribute": "Attribute Management",
         "brand": "Brand Management"
+      },
+      "campus-events": {
+        "$label$": "Campus Events Management",
+        "runners-up": "Rush Events"
       }
     }
   },
   "ru": {
     "toggleLocale": "Переключить язык",
-    "backendResponse": "Ответ бэкенда",
+    "backendResponse": "Ответ сервера",
     "loginPage": {
-      "title": "Платформа управления входом",
-      "description": "Добро пожаловать на платформу управления выбором Alligator. Пожалуйста, выполните соответствующие операции после входа в систему.",
+      "title": "Вход в систему управления",
+      "description": "Добро пожаловать на платформу управления Little Atai. Пожалуйста, войдите для выполнения операций.",
       "username": "Имя пользователя",
       "usernamePlaceholder": "Введите ваше имя пользователя",
       "password": "Пароль",
       "passwordPlaceholder": "Введите ваш пароль",
       "login": "Войти",
+      "logout": "Выйти",
       "loginSuccess": "Вход выполнен успешно",
       "formValidate": {
         "usernameRequired": "Имя пользователя обязательно",
@@ -54,56 +76,95 @@
         "passwordMinAndMax": "Пароль должен быть от 6 до 15 символов"
       }
     },
+    "productPage": {
+      "brand": {
+        "addBrand": "Добавить бренд",
+        "listHeader": {
+          "logoUrl": "Логотип бренда",
+          "logoUrlText": "URL логотипа",
+          "updateTime": "Время обновления"
+        }
+      }
+    },
+    "commons": {
+      "operate": "Другие операции",
+      "edit": "Редактировать",
+      "delete": "Удалить"
+    },
     "routerLabels": {
-      "home": "Главная",
+      "home": "Управление домашней страницей",
       "acl": {
-        "$label$": "Контроль доступа",
-        "permission": "Разрешения",
-        "role": "Роли",
-        "user": "Пользователи"
+        "$label$": "Управление доступом",
+        "permission": "Управление разрешениями",
+        "role": "Управление ролями",
+        "user": "Управление пользователями"
       },
       "product": {
-        "$label$": "Продукты",
-        "stock-keeping": "Управление запасами (SKU)",
-        "standard-product": "Стандартные продукты (SPU)",
-        "attribute": "Атрибуты",
-        "brand": "Бренды"
+        "$label$": "Управление продуктами",
+        "stock-keeping": "Управление складскими единицами (SKU)",
+        "standard-product": "Управление стандартными продуктами (SPU)",
+        "attribute": "Управление атрибутами",
+        "brand": "Управление брендами"
+      },
+      "campus-events": {
+        "$label$": "Управление кампусными мероприятиями",
+        "runners-up": "Быстрые мероприятия"
       }
     }
   },
   "de": {
-    "toggleLocale": "Sprache wechseln",
+    "toggleLocale": "Sprache umschalten",
     "backendResponse": "Backend-Antwort",
     "loginPage": {
-      "title": "Login-Management-Plattform",
-      "description": "Willkommen auf der Alligator-Auswahlverwaltungsplattform. Bitte führen Sie nach dem Einloggen die entsprechenden Vorgänge durch.",
+      "title": "Anmeldung zur Verwaltungsplattform",
+      "description": "Willkommen auf der Little Atai Verwaltungsplattform. Bitte melden Sie sich an, um mit den Operationen fortzufahren.",
       "username": "Benutzername",
-      "usernamePlaceholder": "Geben Sie Ihren Benutzernamen ein",
+      "usernamePlaceholder": "Bitte geben Sie Ihren Benutzernamen ein",
       "password": "Passwort",
-      "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
-      "login": "Einloggen",
-      "loginSuccess": "Einloggen erfolgt erfolgreich",
+      "passwordPlaceholder": "Bitte geben Sie Ihr Passwort ein",
+      "login": "Anmelden",
+      "logout": "Abmelden",
+      "loginSuccess": "Anmeldung erfolgreich",
       "formValidate": {
         "usernameRequired": "Benutzername ist erforderlich",
-        "usernameMinAndMax": "Benutzername muss mindestens 6 und höchstens 10 Zeichen lang sein",
+        "usernameMinAndMax": "Benutzername muss zwischen 6 und 10 Zeichen lang sein",
         "passwordRequired": "Passwort ist erforderlich",
-        "passwordMinAndMax": "Passwort muss mindestens 6 und höchstens 15 Zeichen lang sein"
+        "passwordMinAndMax": "Passwort muss zwischen 6 und 15 Zeichen lang sein"
       }
     },
+    "productPage": {
+      "brand": {
+        "addBrand": "Marke hinzufügen",
+        "listHeader": {
+          "logoUrl": "Markenlogo",
+          "logoUrlText": "Logo-URL",
+          "updateTime": "Aktualisierungszeit"
+        }
+      }
+    },
+    "commons": {
+      "operate": "Andere Operationen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
     "routerLabels": {
-      "home": "Startseite",
+      "home": "Startseiten-Verwaltung",
       "acl": {
-        "$label$": "Zugriffskontrolle",
-        "permission": "Berechtigung",
-        "role": "Rolle",
-        "user": "Benutzer"
+        "$label$": "Zugriffskontrollverwaltung",
+        "permission": "Berechtigungsverwaltung",
+        "role": "Rollenverwaltung",
+        "user": "Benutzerverwaltung"
       },
       "product": {
-        "$label$": "Produkt",
-        "stock-keeping": "Bestandsführung",
-        "standard-product": "Standardprodukt",
-        "attribute": "Attribut",
-        "brand": "Marke"
+        "$label$": "Produktverwaltung",
+        "stock-keeping": "Lagerbestandseinheiten-Verwaltung (SKU)",
+        "standard-product": "Standardprodukteinheiten-Verwaltung (SPU)",
+        "attribute": "Attributverwaltung",
+        "brand": "Markenverwaltung"
+      },
+      "campus-events": {
+        "$label$": "Campus-Veranstaltungsverwaltung",
+        "runners-up": "Schnelle Veranstaltungen"
       }
     }
   },
@@ -112,12 +173,13 @@
     "backendResponse": "后端响应",
     "loginPage": {
       "title": "登录管理平台",
-      "description": "欢迎来到鳄鱼选择管理平台。请在登录后进行相关操作。",
+      "description": "欢迎光临小阿泰管理平台。请在登录后进行相关操作。",
       "username": "用户名",
       "usernamePlaceholder": "请输入您的用户名",
       "password": "密码",
       "passwordPlaceholder": "请输入您的密码",
       "login": "登录",
+      "logout": "登出",
       "loginSuccess": "登录成功",
       "formValidate": {
         "usernameRequired": "用户名是必填项",
@@ -125,6 +187,38 @@
         "passwordRequired": "密码是必填项",
         "passwordMinAndMax": "密码必须至少为6个字符，最多为15个字符"
       }
+    },
+    "productPage": {
+      "brand": {
+        "addBrand": "添加品牌",
+        "listHeader": {
+          "logoUrl": "品牌logo",
+          "logoUrlText": "logo-url",
+          "updateTime": "更新时间"
+        },
+        "formValidate": {
+          "logoUrl": "Logo URL是必填项",
+          "logoUrlMatch": "请输入有效的URL",
+          "tmName": "品牌名称是必填项",
+          "tmNameMin": "品牌名称至少2个字符",
+          "tmNameLabel": "品牌名称",
+          "tmNamePlaceholder": "请输入品牌名称",
+          "tmNameHelp": "输入品牌名称"
+        }
+      }
+    },
+    "commons": {
+      "operate": "其它操作",
+      "add": "添加",
+      "edit": "编辑",
+      "delete": "删除",
+      "cancel": "取消",
+      "submit": "提交",
+      "update": "更新",
+      "confirm": "确认",
+      "success": "成功",
+      "fail": "失败",
+      "operateSuccess": "操作成功"
     },
     "routerLabels": {
       "home": "首页管理",
@@ -140,6 +234,10 @@
         "standard-product": "产品标准管理（spu）",
         "attribute": "属性管理",
         "brand": "品牌管理"
+      },
+      "campus-events": {
+        "$label$": "校园活动管理",
+        "runners-up": "抢活动"
       }
     }
   }

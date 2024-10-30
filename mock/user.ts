@@ -4,8 +4,9 @@ const getUserData = () => {
   return [
     {
       userId: 1,
-      avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'admin',
+      avatar:
+        'https://image.meiye.art/pic_uK9t0sJpuqdxoW3fbpWM3?imageMogr2/thumbnail/700x/interlace/1',
+      username: 'магистраль',
       password: '111111',
       desc: '平台管理员',
       roles: ['平台管理员'],
@@ -50,7 +51,7 @@ export default [
       if (!user) {
         return {
           code: 401,
-          data: 'User does not exist',
+          message: 'User does not exist',
         }
       }
 
