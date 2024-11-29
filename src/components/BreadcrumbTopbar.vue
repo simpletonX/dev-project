@@ -1,15 +1,9 @@
 <template>
   <!-- layout -> 面包屑顶栏 -->
   <div class="breadcrumb-topbar h-full px-6 h-full flex items-center">
-    <div
-      class="breadcrumb-container w-full h-full border-b border-surface-200 dark:border-surface-800"
-    >
-      <div class="h-full flex justify-between items-center">
-        <Breadcrumb
-          class="dark:bg-surface-950"
-          :home="{ icon: 'pi pi-home', route: '/' }"
-          :model="breadcrumbItems"
-        >
+    <div class="breadcrumb-container w-full h-full border-b border-surface-200 dark:border-surface-800">
+      <div class="h-full flex justify-between items-center relative">
+        <Breadcrumb class="dark:bg-surface-950" :home="{ icon: 'pi pi-home', route: '/' }" :model="breadcrumbItems">
           <template #item="{ item, props }">
             <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
               <a :href="href" v-bind="props.action" @click="navigate" class="truncate">
@@ -17,19 +11,13 @@
                 <span class="dark:text-surface-0 hover:opacity-70">{{ item.label }}</span>
               </a>
             </router-link>
-            <a
-              v-else
-              :href="item.url"
-              :target="item.target"
-              v-bind="props.action"
-              class="truncate"
-            >
+            <a v-else :href="item.url" :target="item.target" v-bind="props.action" class="truncate">
               <span class="text-surface-700 dark:text-surface-0">{{ item.label }}</span>
             </a>
           </template>
         </Breadcrumb>
 
-        <div class="flex items-center">
+        <div class="absolute right-0 flex items-center">
           <Select
             v-model="currentLocale_"
             :options="availableLocales"
@@ -57,26 +45,14 @@
           />
 
           <div class="user-info flex items-center ml-4 cursor-pointer">
-            <img
-              :src="userInfo?.avatar"
-              class="w-[34px] h-[34px] rounded-full object-cover"
-              @click="togglePopover"
-            />
+            <img :src="userInfo?.avatar" class="w-[34px] h-[34px] rounded-full object-cover" @click="togglePopover" />
             <Popover ref="op" class="w-[180px] p-2">
               <div class="header text-center">
                 <div class="flex justify-center">
-                  <img
-                    :src="userInfo?.avatar"
-                    class="rounded-full object-cover mb-2 w-[80px] h-[80px]"
-                  />
+                  <img :src="userInfo?.avatar" class="rounded-full object-cover mb-2 w-[80px] h-[80px]" />
                 </div>
                 <div>{{ userInfo?.name }}</div>
-                <Button
-                  :label="t('loginPage.logout')"
-                  class="w-full mt-2"
-                  size="small"
-                  @click="logout"
-                />
+                <Button :label="t('loginPage.logout')" class="w-full mt-2" size="small" @click="logout" />
               </div>
             </Popover>
           </div>
@@ -112,9 +88,7 @@ const { toggleTheme, currentTheme, themeOptions } = useTheme()
 import { useLanguage } from '@/utils/i18n'
 const { currentLocale, availableLocales, changeLocale } = useLanguage()
 const currentLocaleLabel = computed(() => {
-  return availableLocales.find(
-    (locale: { code: string; label: string }) => locale.code === currentLocale_.value
-  )?.label
+  return availableLocales.find((locale: { code: string; label: string }) => locale.code === currentLocale_.value)?.label
 })
 const currentLocale_ = ref(currentLocale.value)
 function changeLocaleReload() {

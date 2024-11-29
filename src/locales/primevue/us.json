@@ -50,20 +50,7 @@
     "November",
     "December"
   ],
-  "monthNamesShort": [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ],
+  "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   "nextDecade": "Next Decade",
   "nextHour": "Next Hour",
   "nextMinute": "Next Minute",

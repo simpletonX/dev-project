@@ -15,14 +15,11 @@
       class="brand-table px-6 pt-1 pb-6 border-[1px] border-solid border-surface-200 dark:border-surface-800 rounded-lg mt-4 bg-surface-0 dark:bg-surface-900"
     >
       <div class="table-content mt-5">
-        <DataTable :value="productBrands" class="mb-5" rowHover v-loading="loading">
+        <MyDataTable :data="productBrands" class="mb-5" :loading="loading">
           <Column field="logoUrl" header="Brand Logo">
             <template #body="{ data }">
               <div class="flex items-center py-1">
-                <img
-                  :src="data.logoUrl"
-                  class="w-[40px] h-[40px] p-1 rounded-lg bg-surface-100 object-cover"
-                />
+                <img :src="data.logoUrl" class="w-[40px] h-[40px] p-1 rounded-lg bg-surface-100 object-cover" />
 
                 <div class="tm-name ml-5">
                   <div class="text-lg">{{ data.tmName }}</div>
@@ -39,38 +36,17 @@
           <Column field="updateTime" header="Update Time"></Column>
           <Column field="operate" header="Other Operations">
             <template #body="{ data }">
-              <Button
-                text
-                label="Changed"
-                icon="pi pi-file-edit"
-                @click="openEditBrandDialog(data)"
-              />
-              <Button
-                text
-                label="Delete"
-                icon="pi pi-trash"
-                severity="danger"
-                @click="handleDeleteBrand(data.id)"
-              />
+              <Button text label="Changed" icon="pi pi-file-edit" @click="openEditBrandDialog(data)" />
+              <Button text label="Delete" icon="pi pi-trash" severity="danger" @click="handleDeleteBrand(data.id)" />
               <!-- `Do you really want to delete the brand ${data.tmName}?` -->
             </template>
           </Column>
-        </DataTable>
-        <Pagination
-          v-model:first="first"
-          v-model:rows="rows"
-          :totalRecords="total"
-          @pageChange="requestList"
-        />
+        </MyDataTable>
+        <Pagination v-model:first="first" v-model:rows="rows" :totalRecords="total" @pageChange="requestList" />
       </div>
     </div>
 
-    <MyDialog
-      v-model:visible="addBrandVisible"
-      title="Brand Management"
-      width="420px"
-      :loading="dialogLoading"
-    >
+    <MyDialog v-model:visible="addBrandVisible" title="Brand Management" width="420px" :loading="dialogLoading">
       <MyFormValidate :yupRules="formValidateRules" :init="formFields_" @submit="handleSubmit">
         <template #default="{ formFields, errors, onValidate }">
           <form class="form-container mt-2">
@@ -89,19 +65,13 @@
             <!-- Brand name -->
             <div class="flex flex-col gap-2 mt-6">
               <label for="username">Brand Name</label>
-              <InputText
-                id="username"
-                v-model="formFields.tmName.value"
-                placeholder="Please enter brand name"
-              />
+              <InputText id="username" v-model="formFields.tmName.value" placeholder="Please enter brand name" />
               <small class="text-red-500" v-if="errors.tmName">{{ errors.tmName }}</small>
               <small id="username-help" v-else>Enter brand name</small>
             </div>
             <div class="mt-10 flex justify-end">
               <Button class="mr-2" outlined @click="addBrandVisible = false">Cancel</Button>
-              <Button type="submit" @click="onValidate">{{
-                formFields_.id ? 'Update' : 'Add'
-              }}</Button>
+              <Button type="submit" @click="onValidate">{{ formFields_.id ? 'Update' : 'Add' }}</Button>
             </div>
           </form>
         </template>
@@ -130,7 +100,6 @@ async function requestList() {
     productBrands.value = res.data.records
     total.value = res.data.total
   } catch (error) {
-    console.error(error)
     loading.value = false
   } finally {
     loading.value = false
@@ -139,16 +108,8 @@ async function requestList() {
 
 import * as yup from 'yup'
 const formValidateRules = ref<Record<string, any>>({
-  logoUrl: yup
-    .string()
-    .url('Please enter a valid URL')
-    .required('Logo URL is required')
-    .default(''),
-  tmName: yup
-    .string()
-    .required('Brand name is required')
-    .min(2, 'Brand name must be at least 2 characters')
-    .default(''),
+  logoUrl: yup.string().url('Please enter a valid URL').required('Logo URL is required').default(''),
+  tmName: yup.string().required('Brand name is required').min(2, 'Brand name must be at least 2 characters').default(''),
 })
 const formFields_ = ref<Record<string, any>>({})
 const addBrandVisible = ref(false)
@@ -171,9 +132,7 @@ function openEditBrandDialog(data: BrandItem) {
   addBrandVisible.value = true
 }
 
-onMounted(() => {
-  requestList()
-})
+onMounted(() => requestList())
 
 const dialogLoading = ref(false)
 async function handleSubmit(formFields: BrandItem) {

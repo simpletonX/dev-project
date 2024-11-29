@@ -33,11 +33,7 @@ export function useTheme() {
   function initTheme() {
     const localTheme = getLocalStorage('theme')
     const isDark =
-      localTheme === null
-        ? window.matchMedia('(prefers-color-scheme: dark)').matches
-        : localTheme === 'dark'
-          ? true
-          : false
+      localTheme === null ? window.matchMedia('(prefers-color-scheme: dark)').matches : localTheme === 'dark' ? true : false
 
     if (isDark) {
       currentTheme.value = true

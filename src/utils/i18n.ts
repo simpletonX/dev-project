@@ -41,9 +41,7 @@ export function useLanguage() {
   }
   // 更新 PrimeVue 的语言
   ;(async () => {
-    primevue.config.locale = await import(
-      `@/locales/primevue/${i18n.global.locale.value}.json`
-    )
+    primevue.config.locale = await import(`@/locales/primevue/${i18n.global.locale.value}.json`)
   })()
 
   return {

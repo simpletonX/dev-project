@@ -28,21 +28,12 @@
         @upload="onUpload"
         @error="onError"
       />
-      <ProgressBar
-        v-show="progress"
-        mode="indeterminate"
-        class="w-1/2 mt-5"
-        style="height: 5px"
-      ></ProgressBar>
+      <ProgressBar v-show="progress" mode="indeterminate" class="w-1/2 mt-5" style="height: 5px"></ProgressBar>
     </div>
     <div class="flex justify-center">
       <Image v-if="src_ && !progress" class="mt-4 dialog-show" preview>
         <template #image>
-          <img
-            :src="src_"
-            alt="image"
-            class="shadow-md rounded-xl w-[220px] h-[130px] object-cover"
-          />
+          <img :src="src_" alt="image" class="shadow-md rounded-xl w-[220px] h-[130px] object-cover" />
         </template>
         <template #preview="slotProps">
           <img :src="src_" alt="preview" :style="slotProps.style" />

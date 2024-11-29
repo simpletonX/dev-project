@@ -18,6 +18,10 @@ import {
   faSquareParking,
   faGear,
   faArrowUpFromBracket,
+  faBoxOpen,
+  faCodeBranch,
+  faDeleteLeft,
+  faFilePen,
 } from '@fortawesome/free-solid-svg-icons'
 import { faSquareWebAwesome, faAmazon } from '@fortawesome/free-brands-svg-icons'
 /* add icons to the library */
@@ -36,7 +40,11 @@ library.add(
   faSquareParking,
   faGear,
   faAmazon,
-  faArrowUpFromBracket
+  faArrowUpFromBracket,
+  faBoxOpen,
+  faCodeBranch,
+  faDeleteLeft,
+  faFilePen
 )
 
 export default {

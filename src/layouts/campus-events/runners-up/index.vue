@@ -29,61 +29,38 @@
                 <Tag
                   class="ml-2"
                   severity="danger"
-                  v-if="
-                    item.isCommunityDesc.indexOf('德育') > -1 ||
-                    item.title.indexOf('德育') > -1
-                  "
+                  v-if="item.isCommunityDesc.indexOf('德育') > -1 || item.title.indexOf('德育') > -1"
                   >德育</Tag
                 >
                 <Tag
                   class="ml-2"
                   severity="info"
-                  v-else-if="
-                    item.isCommunityDesc.indexOf('劳育') > -1 ||
-                    item.title.indexOf('劳育') > -1
-                  "
+                  v-else-if="item.isCommunityDesc.indexOf('劳育') > -1 || item.title.indexOf('劳育') > -1"
                   >劳育</Tag
                 >
                 <Tag
                   class="ml-2"
                   severity="secondary"
-                  v-else-if="
-                    item.isCommunityDesc.indexOf('美育') > -1 ||
-                    item.title.indexOf('美育') > -1
-                  "
+                  v-else-if="item.isCommunityDesc.indexOf('美育') > -1 || item.title.indexOf('美育') > -1"
                   >美育</Tag
                 >
                 <Tag
                   class="ml-2"
                   severity="success"
-                  v-else-if="
-                    item.isCommunityDesc.indexOf('智育') > -1 ||
-                    item.title.indexOf('智育') > -1
-                  "
+                  v-else-if="item.isCommunityDesc.indexOf('智育') > -1 || item.title.indexOf('智育') > -1"
                   >智育</Tag
                 >
                 <Tag class="ml-2" severity="secondary" v-else>嗨佬活动</Tag>
               </div>
               <div class="flex items-center mt-2">
                 <div class="start-time">报名时间 {{ item.enrollStartTime }}</div>
-                <div class="peopleGroupTypeDesc text-surface-500 ml-2 text-sm">
-                  限：{{ item.peopleGroupTypeDesc }}
-                </div>
+                <div class="peopleGroupTypeDesc text-surface-500 ml-2 text-sm">限：{{ item.peopleGroupTypeDesc }}</div>
                 <div class="isCommunityDesc">{{ item.isCommunityDesc.split('-')[1] }}</div>
               </div>
               <div class="flex items-center mt-2">
                 <Tag class="contractorName">{{ item.contractorName }}</Tag>
-                <Button
-                  size="small"
-                  severity="warn"
-                  outlined
-                  class="mr-2 ml-2"
-                  @click="openDetail(item)"
-                  >详情</Button
-                >
-                <Button size="small" severity="info" outlined @click="addActivity(item)"
-                  >{{ item.limitDesc }} 预报名</Button
-                >
+                <Button size="small" severity="warn" outlined class="mr-2 ml-2" @click="openDetail(item)">详情</Button>
+                <Button size="small" severity="info" outlined @click="addActivity(item)">{{ item.limitDesc }} 预报名</Button>
               </div>
               <div class="flex items-center mt-2">
                 <Tag class="activityAddr">
@@ -96,7 +73,7 @@
       </div>
     </template>
 
-    <Drawer v-model:visible="visible" header="活动详情" class="lg:!w-[40rem]">
+    <Drawer v-model:visible="visible" header="活动详情" class="w-[40rem]">
       <div
         class="detail-item flex items-center px-5 py-2"
         v-for="(item, index) in Object.keys(currentItem)"
@@ -130,11 +107,7 @@
 
 <script setup lang="ts">
 import { getLocalStorage, setLocalStorage } from '@/utils/localStorge'
-import {
-  eventslogin as eventsloginAPI,
-  getActivityList as getActivityListAPI,
-  addActivity as addActivityAPI,
-} from '@/api/events'
+import { eventslogin as eventsloginAPI, getActivityList as getActivityListAPI, addActivity as addActivityAPI } from '@/api/events'
 
 const username = ref(getLocalStorage('events-username') || '')
 const password = ref(getLocalStorage('events-password') || '')

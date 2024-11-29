@@ -1,9 +1,6 @@
 <template>
   <!-- 二级导航 -->
-  <div
-    class="children-container pt-1 border-l-2 ml-6 dark:border-surface-800"
-    v-show="item.children && item.expanded"
-  >
+  <div class="children-container pt-1 border-l-2 ml-6 dark:border-surface-800" v-show="item.children && item.expanded">
     <div
       class="item-child relative pl-3 pr-5 cursor-pointer"
       v-for="child in item.children"

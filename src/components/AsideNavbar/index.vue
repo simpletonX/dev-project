@@ -20,12 +20,7 @@
       </div>
 
       <!-- 二级导航（组件内部自行处理是否渲染） -->
-      <SecondaryNav
-        :item="item"
-        :showIcon="props.showIcon"
-        :toggleExpanded="toggleExpanded"
-        :route="route"
-      />
+      <SecondaryNav :item="item" :showIcon="props.showIcon" :toggleExpanded="toggleExpanded" :route="route" />
     </div>
   </div>
 </template>
@@ -72,9 +67,7 @@ watch(
       if (route.children) {
         route.children.forEach((child: any) => {
           if (child.children) {
-            const hasMatchingGrandchild = child.children.some(
-              (grandchild: any) => grandchild.path === newPath
-            )
+            const hasMatchingGrandchild = child.children.some((grandchild: any) => grandchild.path === newPath)
             if (hasMatchingGrandchild) {
               route.expanded = true
               child.expanded = true

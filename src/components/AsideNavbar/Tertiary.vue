@@ -8,8 +8,7 @@
       class="last-child-item px-3 lh-[32px] py-1 text-primary-500 dark:text-primary-500 rounded-md"
       v-for="lastChild in child.children"
       :class="{
-        'bg-primary-100 dark:bg-primary-800 text-primary-950 dark:text-surface-100':
-          route.path === lastChild.path,
+        'bg-primary-100 dark:bg-primary-800 text-primary-950 dark:text-surface-100': route.path === lastChild.path,
       }"
       :key="lastChild.path"
       @click.stop="toggleExpanded(lastChild)"

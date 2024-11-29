@@ -1,9 +1,7 @@
 <template>
   <div class="login">
     <div class="login-container flex justify-center items-center">
-      <div
-        class="bg-surface-0 dark:bg-surface-900 w-[460px] shadow px-10 pt-12 pb-6 rounded-lg"
-      >
+      <div class="bg-surface-0 dark:bg-surface-900 w-[460px] shadow px-10 pt-12 pb-6 rounded-lg">
         <header>
           <div class="text-xl font-bold mb-2">{{ $t('loginPage.title') }}</div>
           <div class="text-base text-gray-500">{{ $t('loginPage.description') }}</div>
@@ -12,9 +10,7 @@
         <main class="mt-12">
           <form @submit="onSubmit">
             <div class="field">
-              <label for="username" class="font-bold text-base mb-2">{{
-                $t('loginPage.username')
-              }}</label>
+              <label for="username" class="font-bold text-base mb-2">{{ $t('loginPage.username') }}</label>
               <InputText
                 id="username"
                 v-model="username"
@@ -26,9 +22,7 @@
               <small class="text-red-400" id="username-help">{{ errors.username }}</small>
             </div>
             <div class="field mt-5">
-              <label for="password" class="font-bold text-base mb-2">{{
-                $t('loginPage.password')
-              }}</label>
+              <label for="password" class="font-bold text-base mb-2">{{ $t('loginPage.password') }}</label>
               <InputText
                 id="password"
                 v-model="password"
@@ -39,9 +33,7 @@
               />
               <small class="text-red-400" id="password-help">{{ errors.password }}</small>
             </div>
-            <Button class="w-full mt-6" type="submit" :loading="loading">{{
-              $t('loginPage.login')
-            }}</Button>
+            <Button class="w-full mt-6" type="submit" :loading="loading">{{ $t('loginPage.login') }}</Button>
           </form>
         </main>
 

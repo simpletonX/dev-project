@@ -4,8 +4,7 @@ const getUserData = () => {
   return [
     {
       userId: 1,
-      avatar:
-        'https://image.meiye.art/pic_uK9t0sJpuqdxoW3fbpWM3?imageMogr2/thumbnail/700x/interlace/1',
+      avatar: 'https://image.meiye.art/pic_uK9t0sJpuqdxoW3fbpWM3?imageMogr2/thumbnail/700x/interlace/1',
       username: 'магистраль',
       password: '111111',
       desc: '平台管理员',
@@ -67,9 +66,7 @@ export default [
     method: 'post',
     response: ({ body }) => {
       const { username, password } = body
-      const user = getUserData().find(
-        (user) => user.username === username && user.password === password
-      )
+      const user = getUserData().find((user) => user.username === username && user.password === password)
       if (!user) {
         return {
           code: 401,

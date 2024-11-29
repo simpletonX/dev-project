@@ -11,9 +11,7 @@ export const confirmDialogService = {
   show(options?: { title?: string; content?: string; width?: string }) {
     this.visible.value = true
     this.title.value = options?.title || 'Warning'
-    this.content.value =
-      options?.content ||
-      'This will delete the content forever, are you sure you want to continue?'
+    this.content.value = options?.content || 'This will delete the content forever, are you sure you want to continue?'
     this.width.value = options?.width || '30rem'
 
     return this
